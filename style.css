@@ -1,0 +1,292 @@
+:root {
+  --background: rgba(255, 0, 0, 0.253);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 2000px;
+}
+
+/* NavBar */
+nav img {
+  width: 112px;
+  height: 112px;
+}
+
+nav {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 4px;
+}
+
+nav ul li a:hover {
+  transition: 0.5s;
+  color: red;
+  border-bottom: 1px solid red;
+}
+
+#about {
+  scroll-margin-top: 200px;
+}
+
+#reservasi {
+  scroll-margin-top: 200px;
+}
+
+
+/* Background */
+.background {
+  width: 100%;
+  height: 600px;
+}
+
+/* Container 1 */
+.container {
+  margin-top: 100px;
+  height: 70vh;
+}
+
+.container p {
+  text-align: center;
+  font-size: 16px;
+}
+
+.container h3 {
+  font-size: 20px;
+  margin-top: 50px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+span {
+  color: red;
+}
+
+/* Carousel */
+.carousel-container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 50px auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .carousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      will-change: transform;
+    }
+
+    .carousel-item-custom {
+      flex: 0 0 calc(100% / 3); /* 3 gambar pas */
+      padding: 5px;
+    }
+
+    .carousel-item-custom img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .carousel-btn {
+      background: none;
+      border: none;
+      color: rgb(255, 0, 0);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    .carousel-btn:hover {
+      opacity: 1;
+    }
+
+    .carousel-btn span {
+      line-height: 1;
+      user-select: none;
+    }
+
+/* Container 2 */
+.container2 {
+  margin-top: 100px;
+  background-color: rgba(255, 0, 0, 0.253);
+  height: 35vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.container2 img {
+  top: 2%;
+  left: 42%;
+  position: absolute;
+  z-index: -1;
+  width: 310px;
+  height: 310px;
+}
+
+.container2 a {
+  border: none;
+  background-color: red;
+  padding: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 100px;
+}
+
+.container2 h2 {
+  margin-top: 30px;
+  font-weight: 600;
+  line-height: 70px;
+}
+
+/* Container 3 */
+.container3 {
+  margin: 150px auto;
+  width: 1317px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.container3 div {
+  width: 324px;
+  height: 243px;
+  overflow: hidden;
+  box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.75);
+}
+
+.container3 div a img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: all 1s ease;
+}
+
+.container3 div a:hover img {
+  transition: 1s;
+  transform: scale(1.1); /* gambar sedikit zoom */
+  filter: brightness(70%); /* jadi agak gelap */
+}
+
+/* Footer */
+.pembayaran {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.pembayaran img {
+  height: 50px;
+}
+
+.footer-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+
+.footer-info .kiri ul {
+  margin-top: 15px;
+}
+
+.footer-info .kiri ul i {
+  font-size: 20px;
+}
+
+.footer-info .kiri ul i span {
+  margin-left: 15px;
+}
+
+.footer-info span,
+p {
+  font-size: 13px;
+  color: black;
+}
+
+.kanan {
+  display: flex;
+  gap: 100px;
+}
+
+.kanan div p {
+  margin-top: 20px;
+}
+
+.medsos i {
+  font-size: 30px;
+}
+
+.credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footerB {
+  background-color: var(--background);
+  padding: 50px;
+  margin-top: 20px;
+}
