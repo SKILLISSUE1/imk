@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -269,7 +270,7 @@
             </h2>
             <ul>
               <i class="bi bi-geo-alt-fill"
-                ><span>Jalan Pantai Indah No. 7, Jakarta</span></i
+                ><a href="#" data-bs-toggle="modal" data-bs-target="#mapModal"><span>Jalan Pantai Indah No. 7, Jakarta</span></a></i
               >
             </ul>
             <ul>
@@ -305,6 +306,27 @@
       </div>
     </footer>
 
+      <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mapModalLabel">Lokasi Restoran</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Ganti link di bawah dengan lokasi restoran kamu -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9845.21743450611!2d106.83785782326164!3d-6.128937346752972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1e17cf58f74f%3A0x504262ac57884abe!2sAncol%2C%20Pademangan%2C%20North%20Jakarta%20City%2C%20Jakarta!5e1!3m2!1sen!2sid!4v1762874521504!5m2!1sen!2sid" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
     <script src="glightbox.min.js"></script>
     <script>
       const lightbox = GLightbox({
@@ -316,6 +338,7 @@
       });
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
