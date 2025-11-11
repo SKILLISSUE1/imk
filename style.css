@@ -58,11 +58,34 @@ nav ul li a:hover {
   scroll-margin-top: 200px;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+  transition: 0.3s;
+  display: block;
+}
 
 /* Background */
 .background {
   width: 100%;
   height: 600px;
+  object-fit: cover;
 }
 
 /* Container 1 */
@@ -157,7 +180,7 @@ span {
 /* Container 2 */
 .container2 {
   margin-top: 100px;
-  background-color: rgba(255, 0, 0, 0.253);
+  background-color: var(--background);
   height: 35vh;
   position: relative;
   display: flex;
@@ -166,15 +189,26 @@ span {
   flex-direction: column;
   text-align: center;
   letter-spacing: 5px;
+  overflow: hidden;
+}
+
+.container2-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .container2 img {
-  top: 2%;
-  left: 42%;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   width: 310px;
   height: 310px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
 }
 
 .container2 a {
@@ -186,13 +220,19 @@ span {
   text-decoration: none;
   color: white;
   border-radius: 5px;
-  margin-top: 100px;
+  margin-top: 30px;
+  z-index: 1;
 }
 
 .container2 h2 {
   margin-top: 30px;
   font-weight: 600;
   line-height: 70px;
+  z-index: 1;
+}
+
+.container2 p {
+  z-index: 1;
 }
 
 /* Container 3 */
@@ -289,4 +329,265 @@ p {
   background-color: var(--background);
   padding: 50px;
   margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .container3 {
+    width: 90%;
+    justify-content: center;
+  }
+  
+  .container3 div {
+    width: calc(25% - 10px);
+    height: auto;
+  }
+  
+  .footer-info {
+    gap: 100px;
+  }
+  
+  .kanan {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav ul {
+    gap: 30px;
+  }
+  
+  .container3 div {
+    width: calc(33.333% - 10px);
+  }
+  
+  .carousel-item-custom {
+    flex: 0 0 calc(100% / 2); /* 2 gambar di tablet */
+  }
+  
+  .container2 img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .footer-info {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .kanan {
+    gap: 80px;
+  }
+  
+  .pembayaran {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hamburger Menu */
+  .hamburger {
+    display: flex;
+  }
+  
+  nav ul {
+    position: fixed;
+    top: 112px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 112px);
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    gap: 40px;
+    transition: right 0.3s ease;
+  }
+  
+  nav ul.active {
+    right: 0;
+  }
+  
+  nav ul li a {
+    font-size: 18px;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .container {
+    margin-top: 80px;
+    height: auto;
+  }
+  
+  .container p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  
+  .container h3 {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  
+  .container h2 {
+    font-size: 24px;
+  }
+  
+  .carousel-container {
+    width: 95%;
+    gap: 10px;
+  }
+  
+  .carousel-btn {
+    font-size: 40px;
+  }
+  
+  .carousel-item-custom {
+    flex: 0 0 100%; /* 1 gambar di mobile */
+  }
+  
+  .container2 {
+    height: auto;
+    padding: 50px 20px;
+  }
+  
+  .container2 img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .container2 h2 {
+    line-height: 40px;
+    margin-top: 0;
+  }
+  
+  .container2 a {
+    margin-top: 30px;
+  }
+  
+  .container3 {
+    margin: 80px auto;
+  }
+  
+  .container3 div {
+    width: calc(50% - 10px);
+  }
+  
+  .pembayaran {
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pembayaran img {
+    height: 40px;
+  }
+  
+  .footerB {
+    padding: 30px 20px;
+  }
+  
+  .kanan {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  nav img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  nav ul {
+    top: 80px;
+    height: calc(100vh - 80px);
+  }
+  
+  .background {
+    height: 400px;
+  }
+  
+  .container {
+    margin-top: 60px;
+  }
+  
+  .container p {
+    font-size: 13px;
+  }
+  
+  .container h3 {
+    font-size: 16px;
+  }
+  
+  .container h2 {
+    font-size: 20px;
+  }
+  
+  .carousel-item-custom img {
+    height: 200px;
+  }
+  
+  .container2 h2 {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+  
+  .container2 p {
+    font-size: 14px;
+  }
+  
+  .container3 div {
+    width: 100%;
+  }
+  
+  .pembayaran {
+    width: 95%;
+  }
+  
+  .pembayaran img {
+    height: 30px;
+  }
+  
+  .footer-info .kiri h2 {
+    font-size: 18px;
+  }
+  
+  .footer-info .kiri ul i {
+    font-size: 16px;
+  }
+  
+  .footer-info .kiri ul i span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .kanan div h2 {
+    font-size: 18px;
+  }
+  
+  .kanan div p {
+    font-size: 14px;
+  }
+  
+  .medsos i {
+    font-size: 24px;
+  }
+  
+  .credit {
+    font-size: 14px;
+  }
 }

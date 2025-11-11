@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seafood</title>
     <link rel="icon" type="image/x-icon" href="img/pavicon.png">
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,18 +16,24 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <nav>
-      <img src="img/Logo.png" alt="" />
-      <ul>
+      <img src="img/Logo.png" alt="Seafood Restaurant Logo" />
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="nav-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#reservasi">Reservasi</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <img class="background" src="img/photo-1517248135467-4c7edcad34c4.JPG" alt="" id="home" />
+    <img class="background" src="img/photo-1517248135467-4c7edcad34c4.JPG" alt="Restaurant Interior" id="home" />
 
     <div class="container" id="about">
       <p>
@@ -44,25 +49,25 @@
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
             <div class="carousel-item-custom">
-              <img src="img/c1.webp" alt="Img 1" />
+              <img src="img/c1.webp" alt="Seafood Dish 1" />
             </div>
             <div class="carousel-item-custom">
-              <img src="img/c2.jpg" alt="Img 2" />
+              <img src="img/c2.jpg" alt="Seafood Dish 2" />
             </div>
             <div class="carousel-item-custom">
-              <img src="img/c3.webp" alt="Img 3" />
+              <img src="img/c3.webp" alt="Seafood Dish 3" />
             </div>
             <div class="carousel-item-custom">
-              <img src="img/c4.webp" alt="Img 4" />
+              <img src="img/c4.webp" alt="Seafood Dish 4" />
             </div>
             <div class="carousel-item-custom">
-              <img src="img/c5.jpeg" alt="Img 5" />
+              <img src="img/c5.jpeg" alt="Seafood Dish 5" />
             </div>
             <div class="carousel-item-custom">
-              <img src="img/c6.jpg" alt="Img 6" />
+              <img src="img/c6.jpg" alt="Seafood Dish 6" />
             </div>
             <div class="carousel-item-custom">
-              <img src="img/c7.jpg" alt="Img 7" />
+              <img src="img/c7.jpg" alt="Seafood Dish 7" />
             </div>
           </div>
         </div>
@@ -83,13 +88,15 @@
     </div>
 
     <div class="container2" id="reservasi">
-      <img src="img/Logo.png" alt="" />
-      <h2>Temukan Rasa Spesial Hari Ini!</h2>
-      <p>
-        Menu tersedia setiap hari <br />
-        (Dapur buka pukul 10.00–22.00)
-      </p>
-      <a href="reservasi.html">Reservasi</a>
+      <div class="container2-content">
+        <img src="img/Logo.png" alt="Seafood Restaurant Logo" />
+        <h2>Temukan Rasa Spesial Hari Ini!</h2>
+        <p>
+          Menu tersedia setiap hari <br />
+          (Dapur buka pukul 10.00–22.00)
+        </p>
+        <a href="reservasi.html">Reservasi</a>
+      </div>
     </div>
 
     <div class="container3">
@@ -100,48 +107,48 @@
         >
           <img
             src="img/080516200_1566881664-shutterstock_1185999352.webp"
-            alt=""
+            alt="Seafood Dish"
           />
         </a>
       </div>
       <div>
         <a href="img/4958427ef55931a31151845711d9138e.jpg" class="glightbox">
-          <img src="img/4958427ef55931a31151845711d9138e.jpg" alt="" />
+          <img src="img/4958427ef55931a31151845711d9138e.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/5fed8cb0ad2fd.jpg" class="glightbox">
-          <img src="img/5fed8cb0ad2fd.jpg" alt="" />
+          <img src="img/5fed8cb0ad2fd.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/64ab582689117.jpeg" class="glightbox">
-          <img src="img/64ab582689117.jpeg" alt="" />
+          <img src="img/64ab582689117.jpeg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/GettyImages-1216250666.webp" class="glightbox">
-          <img src="img/GettyImages-1216250666.webp" alt="" />
+          <img src="img/GettyImages-1216250666.webp" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/istockphoto-1214416414-612x612.jpg" class="glightbox">
-          <img src="img/istockphoto-1214416414-612x612.jpg" alt="" />
+          <img src="img/istockphoto-1214416414-612x612.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/istockphoto-1305699663-612x612.jpg" class="glightbox">
-          <img src="img/istockphoto-1305699663-612x612.jpg" alt="" />
+          <img src="img/istockphoto-1305699663-612x612.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/istockphoto-913545918-612x612.jpg" class="glightbox">
-          <img src="img/istockphoto-913545918-612x612.jpg" alt="" />
+          <img src="img/istockphoto-913545918-612x612.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/lobster-4952603_1280.jpg" class="glightbox">
-          <img src="img/lobster-4952603_1280.jpg" alt="" />
+          <img src="img/lobster-4952603_1280.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
@@ -149,22 +156,22 @@
           href="img/lovepik-spicy-seafood-picture_500938264.jpg"
           class="glightbox"
         >
-          <img src="img/lovepik-spicy-seafood-picture_500938264.jpg" alt="" />
+          <img src="img/lovepik-spicy-seafood-picture_500938264.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/oyster-4263253_640.jpg" class="glightbox">
-          <img src="img/oyster-4263253_640.jpg" alt="" />
+          <img src="img/oyster-4263253_640.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/oysters-3625395_640.jpg" class="glightbox">
-          <img src="img/oysters-3625395_640.jpg" alt="" />
+          <img src="img/oysters-3625395_640.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
         <a href="img/pexels-solliefoto-566345.jpg" class="glightbox">
-          <img src="img/pexels-solliefoto-566345.jpg" alt="" />
+          <img src="img/pexels-solliefoto-566345.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
@@ -174,7 +181,7 @@
         >
           <img
             src="img/pngtree-huajia-shajia-seafood-fried-huajia-food-hd-photography-picture-image_1712715.jpg"
-            alt=""
+            alt="Seafood Dish"
           />
         </a>
       </div>
@@ -183,7 +190,7 @@
           href="img/resep-sambal-sotong-1745295110139_43.jpeg"
           class="glightbox"
         >
-          <img src="img/resep-sambal-sotong-1745295110139_43.jpeg" alt="" />
+          <img src="img/resep-sambal-sotong-1745295110139_43.jpeg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
@@ -193,13 +200,13 @@
         >
           <img
             src="img/resep-tom-yum-low-budget-ala-restoran-all-you-can-eat-dijamin-enak-M5aGVrDgXC-2680453920.webp"
-            alt=""
+            alt="Seafood Dish"
           />
         </a>
       </div>
       <div>
         <a href="img/sapo-tahu-saus-tiram.jpg" class="glightbox">
-          <img src="img/sapo-tahu-saus-tiram.jpg" alt="" />
+          <img src="img/sapo-tahu-saus-tiram.jpg" alt="Seafood Dish" />
         </a>
       </div>
       <div>
@@ -207,7 +214,7 @@
           href="img/Screenshot-2024-12-26-164848-2915600638.webp"
           class="glightbox"
         >
-          <img src="img/Screenshot-2024-12-26-164848-2915600638.webp" alt="" />
+          <img src="img/Screenshot-2024-12-26-164848-2915600638.webp" alt="Seafood Dish" />
         </a>
       </div>
       <div>
@@ -217,13 +224,13 @@
         >
           <img
             src="img/seafood-plate-with-shrimps-mussels-lobsters-served-with-lemon_140725-8798.jpg"
-            alt=""
+            alt="Seafood Dish"
           />
         </a>
       </div>
       <div>
         <a href="img/wholesomeyum-Cajun-Seafood-Boil-23.jpg" class="glightbox">
-          <img src="img/wholesomeyum-Cajun-Seafood-Boil-23.jpg" alt="" />
+          <img src="img/wholesomeyum-Cajun-Seafood-Boil-23.jpg" alt="Seafood Dish" />
         </a>
       </div>
     </div>
@@ -233,23 +240,23 @@
         <p>We accept:</p>
         <img
           src="https://cdn3.iconfinder.com/data/icons/banks-in-indonesia-logo-badge/100/BCA-512.png"
-          alt=""
+          alt="BCA Bank"
         />
         <img
           src="https://cdn3.iconfinder.com/data/icons/banks-in-indonesia-logo-badge/100/Mandiri-512.png"
-          alt=""
+          alt="Mandiri Bank"
         />
         <img
           src="https://iconlogovector.com/uploads/images/2024/03/lg-65ffda68a47ee-QRIS.webp"
-          alt=""
+          alt="QRIS Payment"
         />
         <img
           src="https://i.pinimg.com/1200x/02/2e/98/022e9877180fdc3ef50f973e7620547d.jpg"
-          alt=""
+          alt="Visa Payment"
         />
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png"
-          alt=""
+          alt="Mastercard Payment"
         />
       </div>
 
