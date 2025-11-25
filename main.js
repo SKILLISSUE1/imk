@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Carousel functionality
   const track = document.querySelector(".carousel-track");
   const items = document.querySelectorAll(".carousel-item-custom");
   const prevBtn = document.getElementById("prevBtn");
@@ -14,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const lastClones = [];
 
     // Hapus clone lama dulu (kalau ada)
-    document.querySelectorAll(".carousel-item-custom.clone").forEach(el => el.remove());
+    document
+      .querySelectorAll(".carousel-item-custom.clone")
+      .forEach((el) => el.remove());
 
     // Clone 3 pertama ke akhir
     for (let i = 0; i < visibleSlides; i++) {
@@ -37,7 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set posisi awal
     track.style.transition = "none";
     track.style.transform = `translateX(-${index * itemWidth}px)`;
-    setTimeout(() => (track.style.transition = "transform 0.6s ease-in-out"), 20);
+    setTimeout(
+      () => (track.style.transition = "transform 0.6s ease-in-out"),
+      20
+    );
   }
 
   function moveCarousel() {
@@ -61,12 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
       track.style.transition = "none";
       index = visibleSlides;
       moveCarousel();
-      setTimeout(() => (track.style.transition = "transform 0.6s ease-in-out"), 20);
+      setTimeout(
+        () => (track.style.transition = "transform 0.6s ease-in-out"),
+        20
+      );
     } else if (index <= 0) {
       track.style.transition = "none";
       index = total;
       moveCarousel();
-      setTimeout(() => (track.style.transition = "transform 0.6s ease-in-out"), 20);
+      setTimeout(
+        () => (track.style.transition = "transform 0.6s ease-in-out"),
+        20
+      );
     }
   });
 
@@ -87,7 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Pause saat hover
-  track.parentElement.addEventListener("mouseenter", () => clearInterval(interval));
+  track.parentElement.addEventListener("mouseenter", () =>
+    clearInterval(interval)
+  );
   track.parentElement.addEventListener("mouseleave", startAutoSlide);
 
   window.addEventListener("resize", () => {
@@ -97,21 +111,60 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inisialisasi
   setupCarousel();
   startAutoSlide();
-});
 
-// Hamburger Menu Toggle
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('nav-menu');
-      
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-      });
-      
-      // Close menu when clicking on a link
-      document.querySelectorAll('#nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
-        });
-      });
+  // Hamburger Menu Toggle
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close menu when clicking on a link
+  document.querySelectorAll("#nav-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+
+  // Animasi scroll untuk semua elemen
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  // Observasi elemen dengan animasi
+  document
+    .querySelectorAll(".fade-in-up, .fade-in-left, .fade-in-right, .fade-in")
+    .forEach((el) => {
+      observer.observe(el);
+    });
+
+  // Animasi khusus untuk galeri - muncul dari bawah secara acak
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Delay acak untuk setiap item galeri
+        const randomDelay = Math.random() * 0.5;
+        entry.target.style.transitionDelay = `${randomDelay}s`;
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  galleryItems.forEach((item) => {
+    galleryObserver.observe(item);
+  });
+});

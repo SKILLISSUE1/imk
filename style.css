@@ -14,12 +14,18 @@ html {
 
 body {
   height: 2000px;
+  overflow-x: hidden;
 }
 
 /* NavBar */
 nav img {
   width: 112px;
   height: 112px;
+  transition: transform 0.5s ease;
+}
+
+nav img:hover {
+  transform: scale(1.05);
 }
 
 nav {
@@ -30,6 +36,7 @@ nav {
   align-items: center;
   position: fixed;
   z-index: 3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -42,12 +49,28 @@ nav ul li a {
   text-decoration: none;
   color: black;
   letter-spacing: 4px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-  transition: 0.5s;
   color: red;
-  border-bottom: 1px solid red;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 #about {
@@ -86,12 +109,14 @@ nav ul li a:hover {
   width: 100%;
   height: 600px;
   object-fit: cover;
+  animation: fadeIn 1.5s ease-out;
 }
 
 /* Container 1 */
 .container {
   margin-top: 100px;
-  height: 70vh;
+  height: auto;
+  padding: 0 20px;
 }
 
 .container p {
@@ -110,72 +135,134 @@ nav ul li a:hover {
   font-size: 30px;
   letter-spacing: 5px;
   text-align: center;
+  margin-top: 20px;
 }
 
 span {
   color: red;
 }
 
+/* Animasi untuk teks */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Animasi untuk galeri */
+.gallery-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.gallery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Carousel */
 .carousel-container {
-      width: 90%;
-      max-width: 1300px;
-      margin: 50px auto;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
+  width: 90%;
+  max-width: 1300px;
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
 
-    .carousel-wrapper {
-      overflow: hidden;
-      width: 100%;
-      border-radius: 10px;
-    }
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+}
 
-    .carousel-track {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-      will-change: transform;
-    }
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
 
-    .carousel-item-custom {
-      flex: 0 0 calc(100% / 3); /* 3 gambar pas */
-      padding: 5px;
-    }
+.carousel-item-custom {
+  flex: 0 0 calc(100% / 3); /* 3 gambar pas */
+  padding: 5px;
+}
 
-    .carousel-item-custom img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
-    }
+.carousel-item-custom img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s ease;
+}
 
-    .carousel-btn {
-      background: none;
-      border: none;
-      color: rgb(255, 0, 0);
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 60px;
-      cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.3s;
-    }
+.carousel-item-custom img:hover {
+  transform: scale(1.05);
+}
 
-    .carousel-btn:hover {
-      opacity: 1;
-    }
+.carousel-btn {
+  background: none;
+  border: none;
+  color: rgb(255, 0, 0);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.3s;
+}
 
-    .carousel-btn span {
-      line-height: 1;
-      user-select: none;
-    }
+.carousel-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.carousel-btn span {
+  line-height: 1;
+  user-select: none;
+}
 
 /* Container 2 */
 .container2 {
@@ -209,6 +296,7 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
 }
 
 .container2 a {
@@ -222,6 +310,35 @@ span {
   border-radius: 5px;
   margin-top: 30px;
   z-index: 1;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.container2 a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.container2 a:hover {
+  background-color: darkred;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container2 a:hover::before {
+  left: 100%;
 }
 
 .container2 h2 {
@@ -250,6 +367,13 @@ span {
   height: 243px;
   overflow: hidden;
   box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container3 div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .container3 div a img {
@@ -277,6 +401,11 @@ span {
 
 .pembayaran img {
   height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.pembayaran img:hover {
+  transform: scale(1.1);
 }
 
 .footer-info {
@@ -292,6 +421,11 @@ span {
 
 .footer-info .kiri ul i {
   font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-info .kiri ul i:hover {
+  color: red;
 }
 
 .footer-info .kiri ul i span {
@@ -315,6 +449,14 @@ p {
 
 .medsos i {
   font-size: 30px;
+  margin-right: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.medsos i:hover {
+  transform: scale(1.2);
+  color: red;
 }
 
 .kiri a {
@@ -335,22 +477,55 @@ p {
   margin-top: 20px;
 }
 
+/* Animasi Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .container3 {
     width: 90%;
     justify-content: center;
   }
-  
+
   .container3 div {
     width: calc(25% - 10px);
     height: auto;
   }
-  
+
   .footer-info {
     gap: 100px;
   }
-  
+
   .kanan {
     gap: 50px;
   }
@@ -360,33 +535,44 @@ p {
   nav ul {
     gap: 30px;
   }
-  
+
   .container3 div {
     width: calc(33.333% - 10px);
   }
-  
+
   .carousel-item-custom {
     flex: 0 0 calc(100% / 2); /* 2 gambar di tablet */
   }
-  
+
   .container2 img {
     width: 250px;
     height: 250px;
   }
-  
+
   .footer-info {
     flex-direction: column;
     gap: 50px;
     align-items: center;
     text-align: center;
   }
-  
+
   .kanan {
     gap: 80px;
   }
-  
+
   .pembayaran {
     width: 70%;
+  }
+
+  /* Perbaikan khusus untuk lebar 980px */
+  .container h3,
+  .container h2 {
+    display: block;
+    width: 100%;
+  }
+
+  .container h3 {
+    margin-bottom: 20px;
   }
 }
 
@@ -395,7 +581,7 @@ p {
   .hamburger {
     display: flex;
   }
-  
+
   nav ul {
     position: fixed;
     top: 112px;
@@ -410,100 +596,100 @@ p {
     gap: 40px;
     transition: right 0.3s ease;
   }
-  
+
   nav ul.active {
     right: 0;
   }
-  
+
   nav ul li a {
     font-size: 18px;
   }
-  
+
   .hamburger.active span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
+
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .hamburger.active span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
-  
+
   .container {
     margin-top: 80px;
     height: auto;
   }
-  
+
   .container p {
     font-size: 14px;
     padding: 0 15px;
   }
-  
+
   .container h3 {
     font-size: 18px;
     margin-top: 30px;
   }
-  
+
   .container h2 {
     font-size: 24px;
   }
-  
+
   .carousel-container {
     width: 95%;
     gap: 10px;
   }
-  
+
   .carousel-btn {
     font-size: 40px;
   }
-  
+
   .carousel-item-custom {
     flex: 0 0 100%; /* 1 gambar di mobile */
   }
-  
+
   .container2 {
     height: auto;
     padding: 50px 20px;
   }
-  
+
   .container2 img {
     width: 200px;
     height: 200px;
   }
-  
+
   .container2 h2 {
     line-height: 40px;
     margin-top: 0;
   }
-  
+
   .container2 a {
     margin-top: 30px;
   }
-  
+
   .container3 {
     margin: 80px auto;
   }
-  
+
   .container3 div {
     width: calc(50% - 10px);
   }
-  
+
   .pembayaran {
     width: 90%;
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .pembayaran img {
     height: 40px;
   }
-  
+
   .footerB {
     padding: 30px 20px;
   }
-  
+
   .kanan {
     flex-direction: column;
     gap: 30px;
@@ -515,82 +701,82 @@ p {
     width: 80px;
     height: 80px;
   }
-  
+
   nav ul {
     top: 80px;
     height: calc(100vh - 80px);
   }
-  
+
   .background {
     height: 400px;
   }
-  
+
   .container {
     margin-top: 60px;
   }
-  
+
   .container p {
     font-size: 13px;
   }
-  
+
   .container h3 {
     font-size: 16px;
   }
-  
+
   .container h2 {
     font-size: 20px;
   }
-  
+
   .carousel-item-custom img {
     height: 200px;
   }
-  
+
   .container2 h2 {
     font-size: 18px;
     letter-spacing: 3px;
   }
-  
+
   .container2 p {
     font-size: 14px;
   }
-  
+
   .container3 div {
     width: 100%;
   }
-  
+
   .pembayaran {
     width: 95%;
   }
-  
+
   .pembayaran img {
     height: 30px;
   }
-  
+
   .footer-info .kiri h2 {
     font-size: 18px;
   }
-  
+
   .footer-info .kiri ul i {
     font-size: 16px;
   }
-  
+
   .footer-info .kiri ul i span {
     font-size: 14px;
     margin-left: 10px;
   }
-  
+
   .kanan div h2 {
     font-size: 18px;
   }
-  
+
   .kanan div p {
     font-size: 14px;
   }
-  
+
   .medsos i {
     font-size: 24px;
   }
-  
+
   .credit {
     font-size: 14px;
   }
@@ -598,14 +784,14 @@ p {
 
 /* modal */
 iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 10px;
-    }
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+}
 
-    @media (max-width: 600px) {
-      iframe {
-        height: 300px;
-      }
-    }
+@media (max-width: 600px) {
+  iframe {
+    height: 300px;
+  }
+}
